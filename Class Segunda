@@ -1,0 +1,29 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Segunda extends Win {
+
+    private JTextField Npessoas;
+    private JLabel pessoas;
+    private JLabel msg;
+
+    public Segunda() {
+        super("Detalhes da Viagem", -1, -1, 450, 300, JFrame.DISPOSE_ON_CLOSE);
+    }
+    @Override
+    protected void setupComponents() {
+        setLayout(new BorderLayout(5, 5));
+        JPanel toolbar = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+        add(toolbar, BorderLayout.NORTH);
+        RowPanel form = new RowPanel();
+        add(form, BorderLayout.CENTER);
+
+        msg = new JLabel("Obrigado por comprar conosco");
+        toolbar.add(msg);
+
+        Npessoas = new JTextField(10);
+        pessoas = new JLabel("Numero de Pessoas: ");
+
+        form.addRow(pessoas, Npessoas);
+    }
+}
